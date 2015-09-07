@@ -1,0 +1,26 @@
+JFLAGS = -g
+JC = "C:\Program Files\Java\jdk1.8.0_25\bin\javac.exe"
+.SUFFIXES: .java .class
+.java.class:
+	$(JC) $(JFLAGS) $*.java
+
+CLASSES = \
+	BinaryTrie.java \
+	DijkstraFibonacci.java \
+	Edge.java \
+	FibonacciHeap.java \
+	FileHandling.java \
+	Graph.java \
+	IpRouting.java \
+	NodeType.java \
+	TrieNode.java \
+	FibNode.java \
+	ssp.java \
+	routing.java
+
+default: classes
+
+classes: $(CLASSES:.java=.class)
+
+clean:
+	$(RM) *.class
